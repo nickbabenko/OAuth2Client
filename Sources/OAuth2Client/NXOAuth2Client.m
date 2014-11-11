@@ -354,6 +354,7 @@ NSString * const NXOAuth2ClientConnectionContextTokenRefresh = @"tokenRefresh";
     
     NSMutableURLRequest *tokenRequest = [NSMutableURLRequest requestWithURL:tokenURL];
     [tokenRequest setHTTPMethod:self.tokenRequestHTTPMethod];
+    [tokenRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [authConnection cancel];  // just to be sure
     
     self.authenticating = YES;
